@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 .idea/*
 .env
-/.env.dist
+/utils/db_api/sqlite_books.db
+/books/*
