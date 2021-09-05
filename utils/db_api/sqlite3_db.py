@@ -135,3 +135,22 @@ def create_books_address(book_address):
 
     return add_book
 
+
+def select_all_books_witch_language_programming(language_name):
+
+    data = []
+    try:
+        sqlite3_connection = sqlite3.connect(os.getcwd() + f'{patch_db}sqlite_books.db')
+        cursor = sqlite3_connection.cursor()
+        sql = "SELECT * FROM books WHERE programming_language=?"
+        logging.info('sqlite3 connection')
+        cursor.execute(sql, [(language_name)])
+        data = cursor.fetchall()
+    except sqlite3.Error as error:
+        logging.info(f'Error connection sqlite3 --- {error} ---')
+    finally:
+        if sqlite3_connection:
+            sqlite3_connection.close()
+            logging.info('sqlite3 disconnect')
+
+    return data

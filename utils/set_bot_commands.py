@@ -7,5 +7,6 @@ async def set_default_commands(dp):
             types.BotCommand("start", "Запустить бота"),
             types.BotCommand("help", "Вывести справку"),
             types.BotCommand("new_book", "Добавить новую книгу"),
+            types.BotCommand('list_of_books', 'Список доступных книг')
         ]
     )
